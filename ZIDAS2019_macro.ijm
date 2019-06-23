@@ -3,17 +3,19 @@
 */
 
 run("Blobs (25K)");
-run("Focus Search Bar");
-run("Gaussian Blur...", "sigma=2");
-setAutoThreshold("Default dark");
+run("Invert");
+run("Gaussian Blur...", "sigma=3");
+setAutoThreshold("Default");
 //run("Threshold...");
 setAutoThreshold("Default");
-//setThreshold(124, 255);
+//setThreshold(133, 255);
 setOption("BlackBackground", true);
 run("Convert to Mask");
 selectWindow("blobs.gif");
 run("Watershed");
 run("Analyze Particles...", "display exclude clear summarize add");
+
+//getDirectory("Choose a Directory")
 saveAs("Results", "C:/Work_Lim/ZIDAS2019/Reproducible_IA/Summary_blobs.csv");
 saveAs("Results", "C:/Work_Lim/ZIDAS2019/Reproducible_IA/Results_blobs.csv");
 run("Select All");
